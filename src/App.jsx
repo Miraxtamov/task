@@ -356,7 +356,7 @@ const App = ({ moving, cancelled, dropped, late }) => {
 										{select === value.id ? (
 											<TRinput
 												onChange={(e) => setTitle(e.target.value)}
-												value={title}
+												value={data.trailer}
 												type="text"
 											/>
 										) : (
@@ -367,7 +367,7 @@ const App = ({ moving, cancelled, dropped, late }) => {
 										{select === value.id ? (
 											<TRinput
 												onChange={(e) => setTitle(e.target.value)}
-												value={title}
+												value={data.type}
 												type="text"
 											/>
 										) : (
@@ -378,7 +378,7 @@ const App = ({ moving, cancelled, dropped, late }) => {
 										{select === value.id ? (
 											<TRinput
 												onChange={(e) => setTitle(e.target.value)}
-												value={title}
+												value={data.broker}
 												type="text"
 											/>
 										) : (
@@ -389,7 +389,7 @@ const App = ({ moving, cancelled, dropped, late }) => {
 										{select === value.id ? (
 											<TRinput
 												onChange={(e) => setTitle(e.target.value)}
-												value={title}
+												value={data.reference}
 												type="text"
 											/>
 										) : (
@@ -400,7 +400,7 @@ const App = ({ moving, cancelled, dropped, late }) => {
 										{select === value.id ? (
 											<TRinput
 												onChange={(e) => setTitle(e.target.value)}
-												value={title}
+												value={data.origin}
 												type="text"
 											/>
 										) : (
@@ -411,7 +411,7 @@ const App = ({ moving, cancelled, dropped, late }) => {
 										{select === value.id ? (
 											<TRinput
 												onChange={(e) => setTitle(e.target.value)}
-												value={title}
+												value={data.pickUp}
 												type="text"
 											/>
 										) : (
@@ -422,7 +422,7 @@ const App = ({ moving, cancelled, dropped, late }) => {
 										{select === value.id ? (
 											<TRinput
 												onChange={(e) => setTitle(e.target.value)}
-												value={title}
+												value={data.destination}
 												type="text"
 											/>
 										) : (
@@ -433,7 +433,7 @@ const App = ({ moving, cancelled, dropped, late }) => {
 										{select === value.id ? (
 											<TRinput
 												onChange={(e) => setTitle(e.target.value)}
-												value={title}
+												value={data.plannedDate}
 												type="text"
 											/>
 										) : (
@@ -444,7 +444,7 @@ const App = ({ moving, cancelled, dropped, late }) => {
 										{select === value.id ? (
 											<TRinput
 												onChange={(e) => setTitle(e.target.value)}
-												value={title}
+												value={data.rate}
 												type="text"
 											/>
 										) : (
@@ -455,7 +455,7 @@ const App = ({ moving, cancelled, dropped, late }) => {
 										{select === value.id ? (
 											<TRinput
 												onChange={(e) => setTitle(e.target.value)}
-												value={title}
+												value={data.droppedDate}
 												type="text"
 											/>
 										) : (
