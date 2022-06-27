@@ -111,3 +111,12 @@ export const TRinput = styled.input`
 	outline: none;
 	width: 90px;
 `;
+
+export const DeleteBtn = styled.button`
+	background-color: red;
+	color: white;
+	border: 1px solid red;
+	outline: none;
+	border-radius: 3px;
+	cursor: pointer;
+`

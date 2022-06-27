@@ -20,6 +20,7 @@ import {
 	EditButton,
 	TRinput,
 	SaveButton,
+	DeleteBtn,
 } from "./style";
 
 const App = ({ moving, cancelled, dropped, late }) => {
@@ -316,6 +317,11 @@ const App = ({ moving, cancelled, dropped, late }) => {
 		return {};
 	};
 
+	const getDeleteElem = (ids) => {
+		const newArr = data.filter((value) => value.id !== ids);
+		setData(newArr)
+	}
+
 	return (
 		<Container>
 			<TableContainer>
@@ -346,6 +352,7 @@ const App = ({ moving, cancelled, dropped, late }) => {
 							<TH>DROPPED DATE</TH>
 							<TH>STATUS</TH>
 							<TH>ACTIONS</TH>
+							<TH>Del</TH>
 						</TR>
 					</Thead>
 					{data.map((value, index) => {
@@ -479,6 +486,9 @@ const App = ({ moving, cancelled, dropped, late }) => {
 												Edit
 											</EditButton>
 										)}
+									</TD>
+									<TD>
+										<DeleteBtn onClick={()=> getDeleteElem(value.id)}>Del</DeleteBtn>
 									</TD>
 								</TR>
 							</Tbody>
