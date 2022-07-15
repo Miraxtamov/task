@@ -25,7 +25,16 @@ import {
 
 const App = ({ moving, cancelled, dropped, late }) => {
 	const [select, setSelect] = useState(null);
-	const [title, setTitle] = useState("");
+	const [trailer, setTrailer] = useState("");
+	const [type, setType] = useState("");
+	const [broker, setBroker] = useState("");
+	const [reference, setReference] = useState("");
+	const [origin, setOrigin] = useState("");
+	const [pickUp, setPickUp] = useState("");
+	const [destination, setDestination] = useState("");
+	const [plannedDate, setPlannedDate] = useState("");
+	const [rate, setRate] = useState("");
+	const [droppedDate, setDroppedDate] = useState("");
 
 	const [data, setData] = useState([
 		{
@@ -270,7 +279,6 @@ const App = ({ moving, cancelled, dropped, late }) => {
 
 	const getEdit = (value) => {
 		setSelect(value.id);
-		setTitle(value.name);
 	};
 
 	const getEditSave = () => {
@@ -278,16 +286,16 @@ const App = ({ moving, cancelled, dropped, late }) => {
 			return select === value.id
 				? {
 						...value,
-						trailer: title,
-						type: title,
-						broker: title,
-						reference: title,
-						origin: title,
-						pickUp: title,
-						destination: title,
-						plannedDate: title,
-						rate: title,
-						droppedDate: title,
+						trailer: trailer,
+						type: type,
+						broker: broker,
+						reference: reference,
+						origin: origin,
+						pickUp: pickUp,
+						destination: destination,
+						plannedDate: plannedDate,
+						rate: rate,
+						droppedDate: droppedDate,
 				  }
 				: value;
 		});
@@ -318,9 +326,9 @@ const App = ({ moving, cancelled, dropped, late }) => {
 	};
 
 	const getDeleteElem = (ids) => {
-		const newArr = data.filter((value) => value.id !== ids);
-		setData(newArr)
-	}
+		const newData = data.filter((value) => value.id !== ids);
+		setData(newData);
+	};
 
 	return (
 		<Container>
@@ -362,8 +370,8 @@ const App = ({ moving, cancelled, dropped, late }) => {
 									<TD>
 										{select === value.id ? (
 											<TRinput
-												onChange={(e) => setTitle(e.target.value)}
-												value={data.trailer}
+												onChange={(e) => setTrailer(e.target.value)}
+												value={trailer}
 												type="text"
 											/>
 										) : (
@@ -373,8 +381,8 @@ const App = ({ moving, cancelled, dropped, late }) => {
 									<TD>
 										{select === value.id ? (
 											<TRinput
-												onChange={(e) => setTitle(e.target.value)}
-												value={data.type}
+												onChange={(e) => setType(e.target.value)}
+												value={type}
 												type="text"
 											/>
 										) : (
@@ -384,8 +392,8 @@ const App = ({ moving, cancelled, dropped, late }) => {
 									<TD>
 										{select === value.id ? (
 											<TRinput
-												onChange={(e) => setTitle(e.target.value)}
-												value={data.broker}
+												onChange={(e) => setBroker(e.target.value)}
+												value={broker}
 												type="text"
 											/>
 										) : (
@@ -395,8 +403,8 @@ const App = ({ moving, cancelled, dropped, late }) => {
 									<TD>
 										{select === value.id ? (
 											<TRinput
-												onChange={(e) => setTitle(e.target.value)}
-												value={data.reference}
+												onChange={(e) => setReference(e.target.value)}
+												value={reference}
 												type="text"
 											/>
 										) : (
@@ -406,8 +414,8 @@ const App = ({ moving, cancelled, dropped, late }) => {
 									<TD>
 										{select === value.id ? (
 											<TRinput
-												onChange={(e) => setTitle(e.target.value)}
-												value={data.origin}
+												onChange={(e) => setOrigin(e.target.value)}
+												value={origin}
 												type="text"
 											/>
 										) : (
@@ -417,8 +425,8 @@ const App = ({ moving, cancelled, dropped, late }) => {
 									<TD>
 										{select === value.id ? (
 											<TRinput
-												onChange={(e) => setTitle(e.target.value)}
-												value={data.pickUp}
+												onChange={(e) => setPickUp(e.target.value)}
+												value={pickUp}
 												type="text"
 											/>
 										) : (
@@ -428,8 +436,8 @@ const App = ({ moving, cancelled, dropped, late }) => {
 									<TD>
 										{select === value.id ? (
 											<TRinput
-												onChange={(e) => setTitle(e.target.value)}
-												value={data.destination}
+												onChange={(e) => setDestination(e.target.value)}
+												value={destination}
 												type="text"
 											/>
 										) : (
@@ -439,8 +447,8 @@ const App = ({ moving, cancelled, dropped, late }) => {
 									<TD>
 										{select === value.id ? (
 											<TRinput
-												onChange={(e) => setTitle(e.target.value)}
-												value={data.plannedDate}
+												onChange={(e) => setPlannedDate(e.target.value)}
+												value={plannedDate}
 												type="text"
 											/>
 										) : (
@@ -450,8 +458,8 @@ const App = ({ moving, cancelled, dropped, late }) => {
 									<TD>
 										{select === value.id ? (
 											<TRinput
-												onChange={(e) => setTitle(e.target.value)}
-												value={data.rate}
+												onChange={(e) => setRate(e.target.value)}
+												value={rate}
 												type="text"
 											/>
 										) : (
@@ -461,8 +469,8 @@ const App = ({ moving, cancelled, dropped, late }) => {
 									<TD>
 										{select === value.id ? (
 											<TRinput
-												onChange={(e) => setTitle(e.target.value)}
-												value={data.droppedDate}
+												onChange={(e) => setDroppedDate(e.target.value)}
+												value={droppedDate}
 												type="text"
 											/>
 										) : (
@@ -488,7 +496,9 @@ const App = ({ moving, cancelled, dropped, late }) => {
 										)}
 									</TD>
 									<TD>
-										<DeleteBtn onClick={()=> getDeleteElem(value.id)}>Del</DeleteBtn>
+										<DeleteBtn onClick={() => getDeleteElem(value.id)}>
+											Del
+										</DeleteBtn>
 									</TD>
 								</TR>
 							</Tbody>
