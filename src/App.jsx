@@ -286,21 +286,21 @@ const App = ({ moving, cancelled, dropped, late }) => {
 			return select === value.id
 				? {
 						...value,
-						trailer: trailer,
-						type: type,
-						broker: broker,
-						reference: reference,
-						origin: origin,
-						pickUp: pickUp,
-						destination: destination,
-						plannedDate: plannedDate,
-						rate: rate,
-						droppedDate: droppedDate,
+						[trailer]: value,
+						[type]: type,
+						[broker]: broker,
+						[reference]: reference,
+						[origin]: origin,
+						[pickUp]: pickUp,
+						[destination]: destination,
+						[plannedDate]: plannedDate,
+						[rate]: rate,
+						[droppedDate]: droppedDate,
 				  }
 				: value;
 		});
 		setData(newEditSaveData);
-		setSelect(null);
+		setSelect("");
 	};
 
 	const handleChangeStatus = (id, statusValue) => {
